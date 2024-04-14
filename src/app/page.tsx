@@ -1,112 +1,62 @@
 import Image from "next/image";
+import JoinForm from "./components/joinform";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main className="">
+      <div className="flex h-screen">
+        {/* Left half */}
+        <div className="flex-1 relative">
+          <Image alt="image" src="/cotochica_3D_images 1.png" fill={true} />
+        </div>{" "}
+        <div className="flex-1 flex flex-col justify-center items-center">
+          <svg
+            width="380"
+            height="71"
+            viewBox="0 0 380 71"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="margin5px"
           >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+            <path
+              d="M48.85 44.4868V0.851318H57.82L74.34 25.3014L68.2 25.2403L84.9 0.851318H93.63V44.4868H83.9V29.5682C83.9 26.0855 83.99 22.888 84.17 19.9857C84.35 17.0835 84.65 14.1711 85.08 11.2485L86.14 14.497L73.1 32.7047H69.21L56.29 14.497L57.41 11.2485C57.84 14.0896 58.15 16.9511 58.32 19.8126C58.5 22.6742 58.59 25.9328 58.59 29.5784V44.497H48.85V44.4868Z"
+              fill="#4CBED1"
             />
-          </a>
+            <path
+              d="M107.74 56.7271L115.94 39.6089L115.76 44.4766L99.12 11.0143H109.92L117.53 27.5927C118.08 28.7128 118.59 29.8432 119.06 30.9837C119.53 32.1242 119.91 33.2546 120.18 34.3747L118.41 34.8534C118.76 33.9776 119.18 32.9287 119.65 31.7271C120.12 30.5254 120.61 29.3034 121.13 28.0611L128.15 10.9939H138.95L123.61 43.0204L117.3 56.7169H107.74V56.7271Z"
+              fill="#4CBED1"
+            />
+            <path
+              d="M132.27 56.6253L150.2 11.0041H159.11L177.05 56.6253H166.78L157.22 33.8554C156.87 32.9797 156.52 32.0937 156.19 31.2078C155.86 30.332 155.53 29.4257 155.22 28.499C154.9 27.5825 154.61 26.6762 154.33 25.8004C154.05 24.9247 153.8 24.0795 153.56 23.275L155.57 23.2139C155.33 24.1711 155.07 25.0978 154.77 25.9736C154.47 26.8595 154.17 27.7251 153.85 28.5907C153.53 29.4562 153.2 30.3218 152.85 31.2078C152.5 32.0937 152.14 32.9898 151.79 33.9165L142.23 56.6253H132.27ZM140.7 48.8147L143.95 41.1263H165.19L167.61 48.8147H140.7Z"
+              fill="#3A5E62"
+            />
+            <path
+              d="M196.81 70.444C193.7 70.444 190.82 70.057 188.17 69.2729C185.51 68.4888 183.34 67.5214 181.65 66.3605L184.89 59.5071C185.76 59.9857 186.73 60.444 187.81 60.892C188.89 61.3299 190.08 61.7067 191.38 62.002C192.68 62.2973 194.09 62.4501 195.63 62.4501C197.64 62.4501 199.34 62.114 200.73 61.4317C202.13 60.7495 203.19 59.7209 203.92 58.336C204.65 56.9511 205.01 55.2607 205.01 53.2546V48.8656L206.84 49.1608C206.52 50.4439 205.74 51.6252 204.48 52.7046C203.22 53.7841 201.65 54.67 199.76 55.3523C197.87 56.0346 195.87 56.3706 193.74 56.3706C190.63 56.3706 187.9 55.6985 185.54 54.3543C183.18 53.0101 181.32 51.1466 179.96 48.7637C178.6 46.3808 177.92 43.6211 177.92 40.505C177.92 37.2973 178.61 34.4664 179.99 32.002C181.37 29.5377 183.25 27.5926 185.65 26.1772C188.05 24.7515 190.82 24.0488 193.97 24.0488C195.03 24.0488 196.14 24.1812 197.3 24.4358C198.46 24.7006 199.6 25.0366 200.72 25.4541C201.84 25.8716 202.86 26.391 203.79 27.0122C204.71 27.6334 205.48 28.3156 206.09 29.059C206.7 29.8024 207.04 30.5865 207.12 31.4317L205.17 31.9103L205.58 24.7006H214.49V53.0611C214.49 55.9022 214.05 58.3971 213.16 60.5458C212.28 62.6843 211.04 64.4969 209.47 65.9837C207.9 67.4704 206.02 68.5804 203.84 69.3136C201.68 70.0774 199.33 70.444 196.81 70.444ZM196.46 48.9368C198.23 48.9368 199.78 48.5906 201.12 47.8879C202.46 47.1853 203.49 46.2179 204.22 44.9755C204.95 43.7332 205.31 42.277 205.31 40.5865C205.31 38.8961 204.95 37.4297 204.22 36.167C203.49 34.9043 202.46 33.9266 201.12 33.224C199.78 32.5213 198.23 32.1751 196.46 32.1751C194.61 32.1751 193 32.5213 191.62 33.224C190.24 33.9266 189.18 34.9043 188.43 36.167C187.68 37.4297 187.31 38.8961 187.31 40.5865C187.31 42.277 187.68 43.7332 188.43 44.9755C189.18 46.2179 190.24 47.1853 191.62 47.8879C193 48.5906 194.61 48.9368 196.46 48.9368Z"
+              fill="#3A5E62"
+            />
+            <path
+              d="M240.06 57.226C236.24 57.226 232.91 56.5132 230.06 55.0977C227.21 53.6721 225 51.7372 223.42 49.2729C221.85 46.8085 221.06 43.9979 221.06 40.8309C221.06 38.3055 221.51 36.0244 222.42 33.9775C223.32 31.9307 224.58 30.169 226.2 28.6924C227.81 27.2057 229.7 26.0651 231.86 25.2708C234.02 24.4664 236.36 24.0692 238.88 24.0692C241.32 24.0692 243.56 24.4562 245.61 25.2403C247.65 26.0244 249.43 27.1344 250.95 28.5702C252.46 30.0162 253.63 31.7169 254.46 33.6721C255.29 35.6374 255.66 37.7963 255.58 40.1588L255.52 42.8676H227.26L225.9 37.277H247.85L246.85 38.4786V37.277C246.73 36.279 246.31 35.3727 245.58 34.5682C244.85 33.7637 243.92 33.1323 242.78 32.6741C241.64 32.2158 240.38 31.9816 239 31.9816C237.23 31.9816 235.66 32.277 234.28 32.8574C232.9 33.4379 231.83 34.334 231.06 35.5356C230.29 36.7372 229.91 38.2545 229.91 40.0977C229.91 41.8594 230.37 43.3971 231.3 44.7209C232.22 46.0448 233.54 47.0835 235.25 47.8472C236.96 48.611 238.98 48.9877 241.3 48.9877C243.31 48.9877 244.99 48.7331 246.34 48.2342C247.7 47.7352 248.93 47.1038 250.03 46.3401L254.28 52.5926C252.98 53.5906 251.56 54.446 250 55.1486C248.45 55.8513 246.83 56.3706 245.16 56.7067C243.49 57.0529 241.79 57.226 240.06 57.226Z"
+              fill="#3A5E62"
+            />
+            <path
+              d="M262.95 56.6252V24.7209H271.92L272.21 32.1751L269.97 32.837C270.48 31.279 271.36 29.8329 272.59 28.5091C273.83 27.1853 275.34 26.116 277.13 25.2912C278.92 24.4663 280.86 24.059 282.94 24.059C285.61 24.059 287.88 24.5987 289.73 25.6782C291.58 26.7576 292.98 28.2953 293.92 30.2708C294.86 32.2566 295.34 34.6089 295.34 37.3279V56.615H285.84V38.7128C285.84 37.3075 285.59 36.1262 285.1 35.169C284.61 34.2118 283.88 33.4684 282.92 32.9491C281.96 32.4297 280.84 32.1649 279.59 32.1649C278.49 32.1649 277.5 32.3584 276.61 32.7352C275.72 33.112 274.97 33.6211 274.34 34.2321C273.71 34.8533 273.23 35.5458 272.89 36.3095C272.56 37.0733 272.39 37.8472 272.39 38.6517V56.615H267.73C266.43 56.615 265.39 56.615 264.6 56.615C263.82 56.6252 263.27 56.6252 262.95 56.6252Z"
+              fill="#3A5E62"
+            />
+            <path
+              d="M317.35 57.2872C314.28 57.2872 311.59 56.5744 309.27 55.1589C306.95 53.7333 305.14 51.7781 303.84 49.273C302.54 46.7679 301.89 43.9166 301.89 40.7088C301.89 37.5011 302.56 34.6498 303.9 32.1447C305.24 29.6396 307.1 27.664 309.48 26.2282C311.86 24.7821 314.6 24.0693 317.71 24.0693C319.44 24.0693 321.05 24.3035 322.55 24.7618C324.04 25.22 325.39 25.831 326.59 26.5948C327.79 27.3585 328.75 28.2241 329.48 29.2119C330.21 30.1895 330.63 31.1874 330.75 32.1854L328.51 32.7251V12.1752H338.01V56.6355H329.22L328.69 48.886L330.58 49.3646C330.46 50.3626 330.03 51.3402 329.28 52.277C328.53 53.2139 327.56 54.0591 326.36 54.8025C325.16 55.5459 323.79 56.1467 322.26 56.6049C320.71 57.053 319.08 57.2872 317.35 57.2872ZM320 49.1711C321.77 49.1711 323.31 48.8147 324.63 48.0917C325.95 47.3687 326.96 46.3809 327.67 45.1182C328.38 43.8555 328.73 42.3891 328.73 40.6986C328.73 38.9777 328.38 37.4807 327.67 36.218C326.96 34.9553 325.95 33.9777 324.63 33.275C323.31 32.5724 321.77 32.2261 320 32.2261C318.23 32.2261 316.7 32.5724 315.4 33.275C314.1 33.9777 313.09 34.9553 312.36 36.218C311.63 37.4807 311.27 38.9675 311.27 40.6986C311.27 42.3789 311.63 43.8555 312.36 45.1182C313.09 46.3809 314.1 47.3687 315.4 48.0917C316.7 48.8147 318.23 49.1711 320 49.1711Z"
+              fill="#3A5E62"
+            />
+            <path
+              d="M359.47 57.1649C356.36 57.1649 353.65 56.4623 351.33 55.057C349.01 53.6517 347.19 51.7067 345.87 49.2016C344.55 46.6965 343.89 43.8452 343.89 40.6374C343.89 37.389 344.56 34.5274 345.9 32.0427C347.24 29.558 349.1 27.6028 351.48 26.1873C353.86 24.7617 356.6 24.059 359.71 24.059C361.48 24.059 363.11 24.2932 364.61 24.7515C366.11 25.2097 367.41 25.8411 368.53 26.6456C369.65 27.4501 370.57 28.3258 371.3 29.2933C372.03 30.2505 372.51 31.2586 372.75 32.2973H370.68V24.7311H380V56.6354H370.5V48.4684L372.51 48.7739C372.27 49.8126 371.78 50.8411 371.04 51.8391C370.29 52.837 369.33 53.7433 368.15 54.5376C366.97 55.3421 365.64 55.9837 364.17 56.4623C362.69 56.9307 361.13 57.1649 359.47 57.1649ZM362.01 49.059C363.78 49.059 365.32 48.723 366.64 48.0407C367.96 47.3584 368.98 46.391 369.71 45.1283C370.44 43.8655 370.8 42.3788 370.8 40.6476C370.8 38.9674 370.44 37.4908 369.71 36.2281C368.98 34.9653 367.96 33.9776 366.64 33.2545C365.32 32.5315 363.78 32.1751 362.01 32.1751C360.24 32.1751 358.71 32.5315 357.41 33.2545C356.11 33.9776 355.1 34.9653 354.37 36.2281C353.64 37.4908 353.28 38.9572 353.28 40.6476C353.28 42.3686 353.64 43.8655 354.37 45.1283C355.1 46.391 356.11 47.3584 357.41 48.0407C358.71 48.7128 360.24 49.059 362.01 49.059Z"
+              fill="#3A5E62"
+            />
+            <path
+              d="M0 6.84929H9.98L24.61 28.8859L40.05 6.11609C39.6 7.18534 39.16 8.25458 38.71 9.32382C37.63 11.9104 36.55 14.5071 35.47 17.0937C34.14 20.2912 32.8 23.4888 31.47 26.6864C29.58 31.2281 27.77 35.8208 25.78 40.3218C25.27 41.5031 24.15 42.4705 22.82 41.7984C22.08 41.4216 21.57 40.6986 21.15 39.9756C16.09 31.2179 10.22 22.8269 4.76 14.3136C3.18 11.8187 1.59 9.33401 0 6.84929Z"
+              fill="#4CBED1"
+            />
+          </svg>
+          <JoinForm />
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
       </div>
     </main>
   );
