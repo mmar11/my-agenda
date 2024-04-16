@@ -1,8 +1,7 @@
+import React from "react";
 import Image from "next/image";
-import JoinForm from "./components/joinform";
-import { useRouter } from "next/router";
 
-export default function Home() {
+const Thankyou = () => {
   return (
     <main className="">
       <div className="flex h-screen">
@@ -56,9 +55,17 @@ export default function Home() {
               fill="#4CBED1"
             />
           </svg>
-          <JoinForm />
+
+          <h3 style={{ marginTop: "100px" }} className="card-title">
+            Thank You!😊
+          </h3>
+          <h3 style={{ marginTop: "25px" }} className="card-title">
+            Keep an eye on your email! 😉
+          </h3>
         </div>
       </div>
     </main>
   );
-}
+};
+
+export default Thankyou;
